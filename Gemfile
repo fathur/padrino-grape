@@ -15,6 +15,7 @@ source 'https://rubygems.org'
 
 # Project requirements
 gem 'rake'
+gem 'dotenv'
 gem 'grape'
 gem 'grape-entity'
 

@@ -1,5 +1,7 @@
 module Api
   class App < Grape::API
+
+    format :json
     # def name
     #   "API#{version}"
     # end
