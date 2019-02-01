@@ -15,11 +15,11 @@
 #
 ActiveRecord::Base.configurations[:development] = {
   :adapter   => 'postgresql',
-  :database  => 'sehati_development',
-  :username  => 'root',
-  :password  => '',
+  :database  => 'padgrape',
+  :username  => 'homestead',
+  :password  => 'secret',
   :host      => 'localhost',
-  :port      => 5432
+  :port      => 54320
 
 }
 

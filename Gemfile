@@ -20,7 +20,7 @@ gem 'grape'
 gem 'grape-entity'
 
 # Component requirements
-gem 'activerecord', '>= 5.1', :require => 'active_record'
+gem 'activerecord', '~> 5.2', :require => 'active_record'
 gem 'pg'
 
 # Test requirements
