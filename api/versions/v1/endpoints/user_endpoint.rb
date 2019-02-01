@@ -4,12 +4,7 @@ module Api::Versions::V1::Endpoints
     resource :users do
       get do
 
-        data = {
-            username: 'joni',
-            email: 'google@joni.com',
-            full_name: 'Joni',
-            phone: '+83283838383'
-        }
+        data = User.all
 
         present data, with: Api::Versions::V1::Entities::UserEntity
 
