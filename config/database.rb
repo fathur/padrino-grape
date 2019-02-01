@@ -13,33 +13,23 @@
 #     :socket    => '/tmp/mysql.sock'
 #   }
 #
-ActiveRecord::Base.configurations[:development] = {
-  :adapter   => 'postgresql',
-  :database  => 'padgrape',
-  :username  => 'homestead',
-  :password  => 'secret',
-  :host      => 'localhost',
-  :port      => 54320
-
-}
-
-ActiveRecord::Base.configurations[:production] = {
-  :adapter   => 'postgresql',
-  :database  => 'sehati_production',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
+ActiveRecord::Base.configurations[ENV['RACK_ENV'].to_sym ||= 'development'] = {
+    :adapter => ENV['DB_ADAPTER'] ||= 'postgresql',
+    :database => ENV['DB_DATABASE'],
+    :username => ENV['DB_USERNAME'],
+    :password => ENV['DB_PASSWORD'],
+    :host => ENV['DB_HOST'],
+    :port => ENV['DB_PORT'] ||= 5432
 
 }
 
 ActiveRecord::Base.configurations[:test] = {
-  :adapter   => 'postgresql',
-  :database  => 'sehati_test',
-  :username  => 'root',
-  :password  => '',
-  :host      => 'localhost',
-  :port      => 5432
+    :adapter => ENV['DB_TEST_ADAPTER'] ||= 'postgresql',
+    :database => ENV['DB_TEST_DATABASE'],
+    :username => ENV['DB_TEST_USERNAME'],
+    :password => ENV['DB_TEST_PASSWORD'],
+    :host => ENV['DB_TEST_HOST'],
+    :port => ENV['DB_TEST_PORT'] ||= 5432
 
 }
 
