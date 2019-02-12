@@ -1,4 +1,1 @@
-module Api
-  module Versions
-  end
-end
+module Api module Versions; end; end

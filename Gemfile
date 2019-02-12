@@ -23,9 +23,24 @@ gem 'grape-entity'
 gem 'activerecord', '~> 5.2', :require => 'active_record'
 gem 'pg'
 
-# Test requirements
-gem 'rspec', :group => 'test'
-gem 'rack-test', :require => 'rack/test', :group => 'test'
-
 gem 'padrino-core', '0.14.4'
 gem 'padrino-gen', '0.14.4'
+
+group :development, :test do
+  gem 'pry'
+  gem 'rb-readline'
+  gem 'faker'
+end
+
+# Test requirements
+group :test do
+  gem 'rspec'
+  gem 'rspec_junit_formatter'
+  gem 'rack-test', :require => 'rack/test'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'factory_bot'
+  gem 'database_cleaner'
+  gem 'timecop'
+  gem 'capybara'
+  gem 'simplecov', require: false # Code coverage
+end

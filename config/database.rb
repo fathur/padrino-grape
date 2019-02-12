@@ -19,7 +19,7 @@ ActiveRecord::Base.configurations[ENV['RACK_ENV'].to_sym ||= 'development'] = {
     :username => ENV['DB_USERNAME'],
     :password => ENV['DB_PASSWORD'],
     :host => ENV['DB_HOST'],
-    :port => ENV['DB_PORT'] ||= 5432
+    :port => ENV['DB_PORT'] ||= 5432.to_s
 
 }
 
@@ -29,7 +29,7 @@ ActiveRecord::Base.configurations[:test] = {
     :username => ENV['DB_TEST_USERNAME'],
     :password => ENV['DB_TEST_PASSWORD'],
     :host => ENV['DB_TEST_HOST'],
-    :port => ENV['DB_TEST_PORT'] ||= 5432
+    :port => ENV['DB_TEST_PORT'] ||= 5432.to_s
 
 }
 
